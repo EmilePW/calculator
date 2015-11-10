@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="calculator">
 	<head>
 		<title>Basic Calculator</title>
 		<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
-		<div id="calculator">
+		<!-- <div id="calculator">
 			<section id="numbers">
 				<button class="number" value="7">7</button>
 				<button class="number" value="8">8</button>
@@ -30,10 +30,15 @@
 			<section id="output">
 				<h1 id="outputBox"></h1>
 			</section>
-		</div>
+		</div> -->
 
-		
+		<calculator-dropin></calculator-dropin>
 
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+		<script src="calc.js"></script>
 		<script src="main.js"></script>
 	</body>
 </html>

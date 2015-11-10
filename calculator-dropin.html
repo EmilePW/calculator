@@ -1,0 +1,108 @@
+<div id="cdi-container">
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+	<style>
+
+		* {
+			font-family: 'Lato', sans-serif;
+			font-weight: 600;
+		}
+
+		#cdi-container {
+			margin-left: 30%;
+			margin-top: 10%;
+			width: 500px;
+			border: 1px solid #999;
+			padding: 20px;
+			box-shadow: 3px 5px 0 #BBB;
+			
+		}
+
+		#cdi-screen {
+			width: 100%;
+			height: 100px;
+			border: 1px solid #999;
+			background: #EEE;
+		}
+
+		#cdi-numbers {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			margin: 10px auto;
+		}
+
+		.number {
+			width: 40px;
+			height: 40px;
+			background: #DDD;
+			outline: none;
+			border: 1px solid #999;
+			border-radius: 2px;
+			box-shadow: 0 5px 0 #BBB;
+			font-size: 12px;
+		}
+
+		.number:active {
+			height: 38px;
+			margin-top: 4px;
+			box-shadow: 0 3px 0 #999;
+		}
+
+		
+
+		.operator {
+			width: 40px;
+			height: 40px;
+			background: #DDD;
+			outline: none;
+			border: 1px solid #999;
+			border-radius: 2px;
+			box-shadow: 0 5px 0 #BBB;
+		}
+
+		.operator:active {
+			height: 38px;
+			margin-top: 4px;
+			box-shadow: 0 3px 0 #999;
+		}
+
+		#cdi-operators {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			margin: 20px auto;
+		}
+
+		.number:active #cdi-operators {
+			color: red;
+		}
+
+		#cdi-final-operators {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			margin: 10px auto;
+		}
+	</style>
+	<section id="cdi-screen">
+		<p>{{ computations.join(' ') }}</p>
+	</section>
+	<section id="cdi-numbers">
+		<button class="number" ng-repeat="number in numbers" ng-click="appendDigit(computations, number)" value="number">{{ number }}</button>
+	</section>
+	<section>
+		<section id="cdi-operators">
+			<button ng-repeat="operator in operators" ng-click="appendOperator(computations, operator.icon)" ng-show="$index <= 6" class="operator" value="operator.name">{{ operator.icon }}</button>
+		</section>
+		<section id="cdi-final-operators">
+			<button ng-repeat="operator in operators" ng-show="$index === 7" class="operator" value="operator.name">{{ operator.icon }}</button>
+			<button class="operator" value="operators[8].name" ng-click="compute">{{ operators[8].icon }}</button>
+		</section>
+	</section>
+	<section>
+		<h1></h1>
+	</section>
+</div>

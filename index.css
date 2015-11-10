@@ -1,10 +1,10 @@
 #calculator {
-	width: 80%;
+	width: 960px;
 	margin-left: 10%;
 	height: 600px;
 	display: flex;
-
 }
+
 #numbers {
 	width: 30%;
 	display: flex;

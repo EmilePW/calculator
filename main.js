@@ -77,7 +77,7 @@ window.onload = function() {
 			}
 
 			// Print current operations in the output box
-			if(!sumFinished) {
+			if (!sumFinished && this.value != 'reset') {
 				outputBox.innerHTML += this.innerHTML;
 			}
 		});
